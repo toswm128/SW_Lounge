@@ -30,7 +30,6 @@ const QnaListPage = () => {
   return (
     <div>
       <Header />
-      <Menu />
       <QnaList
         qnaList={qnaList}
         searchValue={searchValue}

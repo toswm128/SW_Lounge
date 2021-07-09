@@ -16,7 +16,6 @@ const WritePage = () => {
   return (
     <div>
       <Header />
-      <Menu />
       <Write
         title={title}
         language={language}

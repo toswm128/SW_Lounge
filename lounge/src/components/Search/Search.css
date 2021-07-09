@@ -15,9 +15,15 @@
 
 .s-button {
   width: 10%;
+  cursor: pointer;
 }
 
 .s-b-item {
+  cursor: pointer;
   width: 100%;
   height: 100%;
+  font-size: 1.5rem;
+  color: white;
+  background-color: black;
+  border: 0;
 }

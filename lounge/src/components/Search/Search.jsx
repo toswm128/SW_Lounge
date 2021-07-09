@@ -13,7 +13,12 @@ const Search = ({ searchValue, searcher }) => {
             <option value="태그">태그</option>
             <option value="언어">언어</option>
           </select>
-          <input className="s-input" type="text" {...searchValue} />
+          <input
+            className="s-input"
+            placeholder="검색할 내용을 입력하세요"
+            type="text"
+            {...searchValue}
+          />
           <Link className="s-button" to="/write">
             <button className="s-b-item">작성하기</button>
           </Link>

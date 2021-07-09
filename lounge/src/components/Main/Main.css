@@ -1,18 +1,21 @@
 .main {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
 }
-
 .content {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 1200px;
+  margin: 100px auto 0 auto;
 }
 
 .video {
-  width: 1000px;
-  height: 675px;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  transform: scale(100.3%);
+  overflow: hidden;
 }
 
 .introduce {

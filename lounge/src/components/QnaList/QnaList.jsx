@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import useInput from "../../hooks/useInput";
-import useSelect from "../../hooks/useSelect";
 import Search from "../Search/Search";
 
 import "./QnaList.css";
@@ -17,19 +15,19 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
               <col width="5%" />
               <col width="50%" />
               <col width="10%" />
-              <col width="10%" />
+              <col width="15%" />
               <col width="5%" />
-              <col width="20%" />
+              <col width="15%" />
             </colgroup>
 
             <thead>
               <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>태그</th>
-                <th>언어</th>
-                <th>작성일자</th>
+                <th>NO.</th>
+                <th>Title</th>
+                <th>Writer</th>
+                <th>KeyWord</th>
+                <th>language</th>
+                <th>Date</th>
               </tr>
             </thead>
             <tbody>
@@ -71,7 +69,7 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                       <td>{current.writer}</td>
                       <td className="q-l-tags">
                         {current.tags.map((tag, key) => (
-                          <span key={key}>{tag}</span>
+                          <span key={key}>{tag + " "}</span>
                         ))}
                       </td>
                       <td>{current.language}</td>

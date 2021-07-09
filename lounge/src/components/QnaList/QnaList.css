@@ -1,3 +1,9 @@
+.q-title {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
 .q-list {
   width: 100%;
   box-sizing: border-box;
@@ -12,11 +18,12 @@
 }
 
 .q-list > thead {
-  background-color: dodgerblue;
+  border-bottom: 1px solid black;
 }
 
 .q-list th {
-  color: white;
+  height: 50px;
+  color: black;
   box-sizing: border-box;
   text-align: center;
 }
@@ -28,7 +35,7 @@
 }
 
 .q-list tr {
-  max-height: 50px;
+  height: 50px;
   box-sizing: border-box;
   border-bottom: 1px solid black;
 }
@@ -42,4 +49,9 @@
 
 .q-list .q-l-title {
   text-align: start;
+  cursor: pointer;
+}
+
+.q-l-title:hover {
+  color: gray;
 }
