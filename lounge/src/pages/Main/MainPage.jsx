@@ -9,7 +9,7 @@ const MainPage = () => {
     <div>
       <Header />
       <Menu />
-      <Main></Main>
+      <Main />
       <Footer />
     </div>
   );

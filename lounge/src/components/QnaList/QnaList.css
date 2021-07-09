@@ -1,0 +1,45 @@
+.q-list {
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+.q-content {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  justify-content: space-between;
+}
+
+.q-list > thead {
+  background-color: dodgerblue;
+}
+
+.q-list th {
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.q-list > tbody {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.q-list tr {
+  max-height: 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+}
+
+.q-list td {
+  max-height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+.q-list .q-l-title {
+  text-align: start;
+}
