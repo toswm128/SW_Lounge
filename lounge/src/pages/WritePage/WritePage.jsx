@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import Menu from "../../components/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import Write from "../../components/Write/Write";
 import useSelect from "../../hooks/useSelect";

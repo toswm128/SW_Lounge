@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Search from "../Search/Search";
+import { Link } from "react-router-dom";
 
 import "./QnaList.css";
 
@@ -51,7 +52,11 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                     .map((current, index) => (
                       <tr key={index}>
                         <td>{current.id}</td>
-                        <td className="q-l-title">{current.title}</td>
+                        <td className="q-l-title">
+                          <Link to={`/detail?id=` + current.id}>
+                            {current.title}
+                          </Link>
+                        </td>
                         <td>{current.writer}</td>
                         <td className="q-l-tags">
                           {current.tags.map((tag, key) => (
@@ -65,7 +70,11 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                 : qnaList.map((current, index) => (
                     <tr key={index}>
                       <td>{current.id}</td>
-                      <td className="q-l-title">{current.title}</td>
+                      <td className="q-l-title">
+                        <Link to={`/detail?id=` + current.id}>
+                          {current.title}
+                        </Link>
+                      </td>
                       <td>{current.writer}</td>
                       <td className="q-l-tags">
                         {current.tags.map((tag, key) => (

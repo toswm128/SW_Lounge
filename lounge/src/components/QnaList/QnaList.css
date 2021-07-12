@@ -52,6 +52,11 @@
   cursor: pointer;
 }
 
-.q-l-title:hover {
+.q-list .q-l-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.q-l-title a:hover {
   color: gray;
 }
