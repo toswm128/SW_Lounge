@@ -1,21 +1,29 @@
 .w-from {
   display: grid;
+
   grid-template-areas:
-    "title title"
-    "len pwd"
-    "key key"
-    "writer writer"
-    "ctt ctt"
-    "button button";
-  grid-template-columns: 1fr 1fr;
+    "title title title title"
+    "len pwd pwd pwd"
+    "key key1 key1 key2"
+    "writer writer writer writer"
+    "ctt ctt ctt ctt"
+    "button button button button";
+  grid-template-columns: 2fr 0.5fr 0.5fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 6fr 1fr;
   gap: 10px;
+  column-gap: 50px;
   height: 700px;
-  margin-bottom: 15vw;
 }
-
+.w-title{
+  font-size:23px;
+  margin-bottom:25px;
+  color:#FFC81E;
+}
 .w-f {
   font-size: 1rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
 }
 
 .w-f-title {
@@ -30,13 +38,22 @@
 .w-f-key {
   grid-area: key;
 }
+.w-f-key1 {
+  grid-area: key1;
+}
+.w-f-key2 {
+  grid-area: key2;
+}
 .w-f-writer {
   grid-area: writer;
 }
 .w-f-content {
   grid-area: ctt;
+  border: 0;
   resize: none;
 }
 .w-f-button {
   grid-area: button;
+  border: 0;
+  cursor: pointer;
 }

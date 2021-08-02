@@ -1,12 +1,13 @@
 import React from "react";
 import "./Main.css";
+import video from "../../assets/video/Lounge.mp4";
 
 const Main = () => {
   return (
     <div className="main">
       <video
         className="video"
-        src="https://dpy84s5h9x6m4.cloudfront.net/22ss1/ADSB_MAIN_FINAL_1.mp4"
+        src={video}
         autoplay="autoplay" //자동 재생 on / off
         loop //반복재생 on / off
         muted // 음소거 on / off

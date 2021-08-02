@@ -41,11 +41,7 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                         (searcher.value === "작성자" &&
                           qna.writer.includes(searchValue.value)) ||
                         (searcher.value === "태그" &&
-                          qna.tags
-                            .map(tag => {
-                              return tag;
-                            })
-                            .includes(searchValue.value)) ||
+                          qna.tag1.includes(searchValue.value)) ||
                         (searcher.value === "언어" &&
                           qna.language.includes(searchValue.value))
                     )
@@ -58,11 +54,7 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                           </Link>
                         </td>
                         <td>{current.writer}</td>
-                        <td className="q-l-tags">
-                          {current.tags.map((tag, key) => (
-                            <span key={key}>{tag}</span>
-                          ))}
-                        </td>
+                        <td className="q-l-tags">{current.tag1}</td>
                         <td>{current.language}</td>
                         <td>{current.date}</td>
                       </tr>
@@ -77,9 +69,7 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                       </td>
                       <td>{current.writer}</td>
                       <td className="q-l-tags">
-                        {current.tags.map((tag, key) => (
-                          <span key={key}>{tag + " "}</span>
-                        ))}
+                        <span>{current.tag1}</span>
                       </td>
                       <td>{current.language}</td>
                       <td>{current.date}</td>

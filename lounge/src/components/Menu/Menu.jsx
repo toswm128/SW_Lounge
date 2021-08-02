@@ -15,11 +15,19 @@ const Menu = () => {
           <Link className="nav-item" to="/qna">
             Q&A
           </Link>
-          <div className="title">SW Lounge</div>
-          <Link className="nav-item" to="/qna">
-            3D프린터 예약
+          <Link className="nav-item" to="/printer">
+            3D Printer
           </Link>
-
+          <div className="title">SW Lounge</div>
+          <a
+            className="nav-item"
+            href="https://www.instagram.com/jnu_sw_lounge/"
+          >
+            Instagram
+          </a>
+          <a className="nav-item" href="http://pf.kakao.com/_xiBKcK">
+            KaKaotalk Channel
+          </a>
           <img
             className="m-button"
             onClick={isMenu.onClick}

@@ -27,6 +27,10 @@
   font-weight: bold;
 }
 
+.d-question {
+  border-bottom: 1px solid black;
+}
+
 .d-q {
   padding: 12px;
   min-height: 200px;
@@ -36,6 +40,36 @@
   margin-top: 100px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.d-answer {
+  border-bottom: 1px solid black;
+}
+
+.d-a {
+  margin-top: 30px;
+  border-top: 1px solid black;
+  padding-bottom: 30px;
+}
+
+.d-a-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border-bottom: 1px solid black;
+  padding: 5px 0;
+}
+
+.d-a-option {
+  width: 10%;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.d-a-content {
+  padding: 10px 0;
 }
 
 .d-aWrite {

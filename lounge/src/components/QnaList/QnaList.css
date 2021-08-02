@@ -17,6 +17,10 @@
   justify-content: space-between;
 }
 
+.q-allBorad{
+  margin-top:10px;
+}
+
 .q-list > thead {
   border-bottom: 1px solid black;
 }

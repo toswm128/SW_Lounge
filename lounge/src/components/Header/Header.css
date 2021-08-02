@@ -4,12 +4,12 @@
   justify-content: center;
   position: absolute;
   align-items: center;
-  height: 100px;
+  height: 50px;
   top: 0;
 }
 
 .header > a {
   color: black;
-  font-size: 1.7rem;
+  font-size: 1rem;
   text-decoration: none;
 }
