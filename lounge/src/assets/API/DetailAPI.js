@@ -38,6 +38,7 @@ class Detail {
     }
   };
   deleteDetail = async id => {
+    console.log(id);
     try {
       const response = await axios.delete(`${SERVER}board/detail/${id}`);
       return response;

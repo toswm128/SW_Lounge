@@ -1,10 +1,10 @@
 import React from "react";
 import "./Delete.css";
 
-const Delete = () => {
+const Delete = ({ deleteDetail }) => {
   return (
     <div className="delete">
-      <button>삭제</button>
+      <button onClick={deleteDetail}>삭제</button>
     </div>
   );
 };

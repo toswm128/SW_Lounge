@@ -34,17 +34,17 @@ const WritePage = () => {
             tag2: tag2.value,
             tag3: tag3.value,
           })
-        : alert(
-            "입력을 해주세요",
-            title.value,
-            language.value,
-            password.value,
-            tag1.value,
-            tag2.value,
-            tag3.value,
-            writer.value,
-            content.value
-          );
+        : alert("입력을 해주세요");
+      console.log(
+        title.value,
+        language.value,
+        password.value,
+        tag1.value,
+        tag2.value,
+        tag3.value,
+        writer.value,
+        content.value
+      );
     } catch (error) {
       console.log(error);
     }
@@ -56,9 +56,9 @@ const WritePage = () => {
         title={title}
         language={language}
         password={password}
-        keyWord={tag1}
-        keyWord1={tag2}
-        keyWord2={tag3}
+        tag1={tag1}
+        tag2={tag2}
+        tag3={tag3}
         writer={writer}
         content={content}
         tryWrite={tryWrite}

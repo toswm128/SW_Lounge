@@ -68,6 +68,10 @@ const UpdatePage = () => {
     });
   };
 
+  const deleteDetail = async () => {
+    DetailAPI.deleteDetail(query * 1);
+  };
+
   const isPass = useSwitch(false);
   const pwdInput = useInput("");
   return (
@@ -87,7 +91,7 @@ const UpdatePage = () => {
             tryWrite={updateQna}
             isPass={isPass}
           />
-          <Delete />
+          <Delete deleteDetail={deleteDetail} />
         </>
       ) : (
         <Password

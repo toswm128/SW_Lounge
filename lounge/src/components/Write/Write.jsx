@@ -12,7 +12,6 @@ const Write = ({
   writer,
   content,
   tryWrite,
-  updateQna,
   isPass,
 }) => {
   return (
