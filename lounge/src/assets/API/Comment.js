@@ -29,7 +29,9 @@ class Comment {
 
       await axios.put(`${SERVER}/board/comment/${id}/`, body);
     } catch (error) {
-      console.log(error);
+      if (error.response.status === 400) {
+        alert("이름과 내용을 입력해주세요");
+      }
     }
   };
   delectComment = async id => {

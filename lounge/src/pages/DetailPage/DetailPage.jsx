@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Detail from "../../components/Detail/Detail";
@@ -11,6 +11,8 @@ import useSwitch from "../../hooks/useSwitch";
 const DetailPage = () => {
   const [qnaList, setQnaList] = useState({});
   const [flag, setFlag] = useState(true);
+
+  const pwdInput = useRef();
 
   const history = useHistory();
   //쿼리 스트링 가져오는 작업
@@ -63,6 +65,7 @@ const DetailPage = () => {
         postComment={postComment}
         delectComment={delectComment}
         updateComment={updateComment}
+        pwdInput={pwdInput}
       />
       <Footer />
     </div>

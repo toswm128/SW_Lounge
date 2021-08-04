@@ -11,6 +11,7 @@ const Detail = ({
   postComment,
   delectComment,
   updateComment,
+  pwdInput,
 }) => {
   return (
     <div className="detail">
@@ -44,20 +45,34 @@ const Detail = ({
                   <div className="d-a-header">
                     <div className="d-a-option">
                       <div
-                        onClick={() =>
-                          updateComment(
-                            name.value,
-                            qnaData.id,
-                            answer.value,
-                            password.value,
-                            kakao.value,
-                            current.id
-                          )
-                        }
+                        onClick={() => {
+                          password.value === current.password
+                            ? updateComment(
+                                name.value,
+                                qnaData.id,
+                                answer.value,
+                                password.value,
+                                kakao.value,
+                                current.id
+                              )
+                            : pwdInput.current.focus().then(() => {
+                                alert("비밀번호가 일치하지 않습니다");
+                              });
+                        }}
                       >
                         수정
                       </div>
-                      <div onClick={() => delectComment(current.id)}>삭제</div>
+                      <div
+                        onClick={() => {
+                          password.value === current.password
+                            ? delectComment(current.id)
+                            : pwdInput.current.focus().then(() => {
+                                alert("비밀번호가 일치하지 않습니다");
+                              });
+                        }}
+                      >
+                        삭제
+                      </div>
                     </div>
                   </div>
                   <div className="d-a-content">{current.content}</div>
@@ -72,7 +87,12 @@ const Detail = ({
         }
         <div className="d-aTitle">답변하기</div>
         <input type="text" {...name} placeholder="이름" />
-        <input type="text" {...password} placeholder="비밀번호" />
+        <input
+          type="text"
+          {...password}
+          ref={pwdInput}
+          placeholder="비밀번호"
+        />
         <input type="checkbox" {...kakao} />
         <textarea
           className="d-aWrite"
