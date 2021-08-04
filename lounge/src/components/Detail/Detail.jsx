@@ -12,7 +12,6 @@ const Detail = ({
   delectComment,
   updateComment,
 }) => {
-  console.log(qnaData);
   return (
     <div className="detail">
       <div className="content">
@@ -35,7 +34,7 @@ const Detail = ({
           <div className="d-answer">
             <div className="d-aTitle">답변</div>
 
-            {qnaData.comment ? (
+            {qnaData.comment && qnaData.comment[0] ? (
               qnaData.comment.map(current => (
                 <div className="d-a" key={current.id}>
                   <div className="d-a-header">

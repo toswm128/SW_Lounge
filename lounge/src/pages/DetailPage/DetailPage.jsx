@@ -10,22 +10,28 @@ import useSwitch from "../../hooks/useSwitch";
 
 const DetailPage = () => {
   const [qnaList, setQnaList] = useState({});
+  const [flag, setFlag] = useState(true);
 
   const history = useHistory();
   //쿼리 스트링 가져오는 작업
   const query = history.location.search.split("=")[1];
   //해당하는 데이터만 가져옴
   const getQnaDetail = async () => {
+    name.setValue("");
+    password.setValue("");
+    answer.setValue("");
     DetailAPI.getDetail(query * 1).then(current => setQnaList(current.data));
   };
-  useEffect(() => getQnaDetail(), []);
+  useEffect(() => getQnaDetail(), [flag]);
   const name = useInput("");
   const password = useInput("");
   const kakao = useSwitch(false);
   const answer = useInput("");
 
   const postComment = async (name, board_id, content, password, kakao) => {
-    Comment.postComment(name, board_id, content, password, kakao);
+    Comment.postComment(name, board_id, content, password, kakao).then(() => {
+      setFlag(!flag);
+    });
   };
 
   const updateComment = async (
@@ -36,11 +42,13 @@ const DetailPage = () => {
     password,
     kakao
   ) => {
-    Comment.updateComment(id, name, board_id, content, password, kakao);
+    Comment.updateComment(id, name, board_id, content, password, kakao).then(
+      () => setFlag(!flag)
+    );
   };
 
   const delectComment = async id => {
-    Comment.delectComment(id);
+    Comment.delectComment(id).then(() => setFlag(!flag));
   };
 
   return (

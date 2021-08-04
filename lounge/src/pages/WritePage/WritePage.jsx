@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Write from "../../components/Write/Write";
@@ -15,6 +16,12 @@ const WritePage = () => {
   const tag3 = useInput("");
   const writer = useInput("");
   const content = useInput("");
+
+  const history = useHistory();
+
+  const goQna = () => {
+    history.push("/qna");
+  };
 
   const tryWrite = async () => {
     try {
@@ -33,18 +40,8 @@ const WritePage = () => {
             tag1: tag1.value,
             tag2: tag2.value,
             tag3: tag3.value,
-          })
+          }).then(() => goQna())
         : alert("입력을 해주세요");
-      console.log(
-        title.value,
-        language.value,
-        password.value,
-        tag1.value,
-        tag2.value,
-        tag3.value,
-        writer.value,
-        content.value
-      );
     } catch (error) {
       console.log(error);
     }
