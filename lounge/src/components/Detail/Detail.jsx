@@ -10,6 +10,7 @@ const Detail = ({
   kakao,
   postComment,
   delectComment,
+  updateComment,
 }) => {
   console.log(qnaData);
   return (
@@ -45,7 +46,7 @@ const Detail = ({
                     <div className="d-a-option">
                       <div
                         onClick={() =>
-                          postComment(
+                          updateComment(
                             name.value,
                             qnaData.id,
                             answer.value,
