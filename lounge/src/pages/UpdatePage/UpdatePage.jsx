@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Write from "../../components/Write/Write";
@@ -8,49 +8,68 @@ import useSelect from "../../hooks/useSelect";
 import Password from "../../components/Password/Password";
 import useSwitch from "../../hooks/useSwitch";
 import Delete from "../../components/Delete/Delete";
+import DetailAPI from "../../assets/API/DetailAPI";
+
 const UpdatePage = () => {
-  //서버에서 가져온 데이터
-  const qnaList = [
-    {
-      id: 1,
-      title: "제목",
-      writer: "나",
-      tags: ["d", "a"],
-      language: "한국어",
-      date: "2021-07-09",
-      password: 1234,
-      q: "질문입니다",
-      a: [""],
-    },
-    {
-      id: 0,
-      title: "히히",
-      writer: "누구",
-      tags: ["react", "c#", "java", "vue"],
-      language: "한국어",
-      date: "2021-07-09",
-      password: 1234,
-      q: "질문입니다",
-      a: ["답변입니다", "답변2"],
-    },
-  ];
+  const title = useInput();
+  const language = useSelect();
+  const password = useInput();
+  const tag1 = useInput();
+  const tag2 = useInput();
+  const tag3 = useInput();
+  const writer = useInput();
+  const content = useInput();
+
+  const getDetail = async () => {
+    await DetailAPI.getDetail(query * 1).then(current => {
+      const qna = current.data;
+      title.setValue(qna.title);
+      language.setValue(qna.language);
+      password.setValue(qna.password);
+      tag1.setValue(qna.tag1);
+      tag2.setValue(qna.tag2);
+      tag3.setValue(qna.tag3);
+      writer.setValue(qna.writer);
+      content.setValue(qna.content);
+    });
+  };
+
+  useEffect(() => {
+    getDetail();
+  }, []);
+
   const history = useHistory();
   //쿼리 스트링
   const query = history.location.search.split("=")[1];
   // 해당하는 데이터만 필터
-  const qnaData = qnaList.filter(qna => qna.id === query * 1);
-  //배열 분리
-  const qna = qnaData[0];
 
-  const title = useInput(qna.title);
-  const language = useSelect(qna.language);
-  const password = useInput(qna.password);
-  const keyWord = useInput(qna.tags);
-  const writer = useInput(qna.writer);
-  const content = useInput(qna.q);
+  const updateQna = async () => {
+    console.log(
+      title.value,
+      content.value,
+      writer.value,
+      language.value,
+      password.value,
+      tag1.value,
+      tag2.value,
+      tag3.value,
+      query * 1
+    );
+    DetailAPI.updateBoard({
+      title: title.value,
+      content: content.value,
+      writer: writer.value,
+      language: language.value,
+      password: password.value,
+      tag1: tag1.value,
+      tag2: tag2.value,
+      tag3: tag3.value,
+      id: query * 1,
+    });
+  };
+
   const isPass = useSwitch(false);
   const pwdInput = useInput("");
-
   return (
     <div>
       <Header />
@@ -60,9 +79,13 @@ const UpdatePage = () => {
             title={title}
             language={language}
             password={password}
-            keyWord={keyWord}
+            tag1={tag1}
+            tag2={tag2}
+            tag3={tag3}
             writer={writer}
             content={content}
+            tryWrite={updateQna}
+            isPass={isPass}
           />
           <Delete />
         </>

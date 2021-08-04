@@ -6,12 +6,14 @@ const Write = ({
   title,
   language,
   password,
-  keyWord,
-  keyWord1,
-  keyWord2,
+  tag1,
+  tag2,
+  tag3,
   writer,
   content,
   tryWrite,
+  updateQna,
+  isPass,
 }) => {
   return (
     <div className="write">
@@ -41,19 +43,19 @@ const Write = ({
           <input
             className="w-f-key w-f"
             type="text"
-            {...keyWord}
+            {...tag1}
             placeholder="키워드1                               ex)C, Python"
           />
           <input
             className="w-f-key1 w-f"
             type="text"
-            {...keyWord1}
+            {...tag2}
             placeholder="키워드2              ex)함수,배열"
           />
           <input
             className="w-f-key2 w-f"
             type="text"
-            {...keyWord2}
+            {...tag3}
             placeholder="키워드3"
           />
           <input
@@ -68,7 +70,7 @@ const Write = ({
             placeholder="내용"
           />
           <button className="w-f-button w-f" onClick={tryWrite}>
-            작성
+            {isPass ? "수정" : "작성"}
           </button>
         </div>
       </div>

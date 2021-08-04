@@ -72,7 +72,7 @@ const QnaList = ({ qnaList, searchValue, searcher }) => {
                         <span>{current.tag1}</span>
                       </td>
                       <td>{current.language}</td>
-                      <td>{current.date}</td>
+                      <td>{current.create_at}</td>
                     </tr>
                   ))}
             </tbody>

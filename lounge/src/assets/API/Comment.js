@@ -12,12 +12,12 @@ class Comment {
         kakao, // 글 수정 시 사용할 비밀번호, bool값
       };
 
-      axios.post(`${SERVER}/board/comment/post/`, body);
+      await axios.post(`${SERVER}/board/comment/post/`, body);
     } catch (error) {
       console.log(error);
     }
   };
-  updateComment = async (id, name, board_id, content, password, kakao) => {
+  updateComment = async (name, board_id, content, password, kakao, id) => {
     try {
       const body = {
         name, // 답변자, 댓글 작성자 닉네임
@@ -27,14 +27,14 @@ class Comment {
         kakao, // 글 수정 시 사용할 비밀번호, bool값
       };
 
-      axios.put(`${SERVER}/board/comment/${id}/`, body);
+      await axios.put(`${SERVER}/board/comment/${id}/`, body);
     } catch (error) {
       console.log(error);
     }
   };
   delectComment = async id => {
     try {
-      axios.delete(`${SERVER}/board/comment/${id}/`);
+      await axios.delete(`${SERVER}/board/comment/${id}/`);
     } catch (err) {
       console.log(err);
     }

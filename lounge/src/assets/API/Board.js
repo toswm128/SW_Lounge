@@ -4,7 +4,7 @@ import { SERVER } from "../../Config/config.json";
 class Board {
   getBoard = async () => {
     try {
-      const response = axios.get(`${SERVER}board`);
+      const response = await axios.get(`${SERVER}board`);
       return response;
     } catch (err) {
       console.log(err);
@@ -32,7 +32,7 @@ class Board {
       tag3,
     };
     try {
-      axios.post(`${SERVER}board/`, body);
+      await axios.post(`${SERVER}board/`, body);
     } catch (err) {
       console.log(err);
     }

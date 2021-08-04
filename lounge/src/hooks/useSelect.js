@@ -6,7 +6,7 @@ const useSelect = initialValue => {
     setValue(e.target.value);
   };
 
-  return { value, onChange };
+  return { value, onChange, setValue };
 };
 
 export default useSelect;
